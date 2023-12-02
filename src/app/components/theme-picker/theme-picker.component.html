@@ -1,5 +1,5 @@
-<nav class="fixed flex flex-col items-center w-[300px] h-screen text-dark shadow-[0px_4px_80px_10px] shadow-customshadow bg-bmain transition-all ease-out"
-    [ngClass]="{'h-[150px] shadow-none': !isOpen}">
+<nav class="fixed flex flex-col items-center w-[300px] h-screen text-dark shadow-[0px_4px_80px_10px] shadow-customshadow bg-bmain transition-shadow ease-out"
+    [ngClass]="{'shadow-none bg-transparent': !isOpen}">
     <div class="flex flex-row w-[214px] items-center justify-between mt-[40px] cursor-pointer"
         (click)="isOpen = !isOpen">
         <div class="flex flex-row items-center">
@@ -10,10 +10,10 @@
         <i class="text-secondary text-[20px] fa-solid fa-angle-down transition-transform"
             [ngClass]="{'rotate-180': isOpen}"></i>
     </div>
-    <ul class="w-full flex flex-col items-center transition-opacity ease-out"
+    <ul class="w-full flex flex-col items-center transition-opacity ease-out mt-[30px]"
         [ngClass]="{'invisible opacity-0': !isOpen}">
         @for(theme of themes; track theme.class) {
-        <li class="flex items-center justify-between w-[214px] text-[24px] px-4 py-3 hover:bg-customhover rounded-md mt-[30px] mb-[20px] cursor-pointer"
+        <li class="flex items-center justify-between w-[214px] text-[24px] px-4 py-3 hover:bg-customhover rounded-md my-[10px] cursor-pointer"
             (click)="this.themeService.changeTheme(theme.class)"
             [ngClass]="{'bg-customhover': themeService.getTheme() === theme.class}">
             <p class="text-fcolor">{{theme.name}}</p>
