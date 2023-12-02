@@ -1,0 +1,32 @@
+<nav class="fixed flex flex-col items-center w-[300px] h-screen text-dark shadow-2xl bg-bmain transition-all ease-out" [ngClass]="{'h-[150px] shadow-none': !isOpen}">
+    <div class="flex flex-row w-[214px] items-center justify-between mt-[40px] cursor-pointer" (click)="isOpen = !isOpen">
+        <div class="flex flex-row items-center">
+            <span class="flex items-center justify-center w-[56px] h-[54px] bg-secondary rounded-md text-white"><i
+                    class="fa-solid fa-paintbrush text-[30px] pr-[4px]"></i></span>
+            <h1 class="ml-4 text-[24px] text-fcolor">Temas</h1>
+        </div>
+        <i class="text-secondary text-[20px] fa-solid fa-angle-right transition-transform" [ngClass]="{'rotate-180': isOpen}"></i>
+    </div>
+    <ul class="w-full flex flex-col items-center transition-opacity ease-out" [ngClass]="{'invisible opacity-0': !isOpen}">
+        <li class="flex items-center justify-around w-[214px] text-[24px] px-4 py-3 hover:bg-customhover rounded-md mt-[30px] mb-[20px] cursor-pointer"
+            (click)="this.themeService.changeTheme('light')"
+            [ngClass]="{'bg-customhover': themeService.getTheme() === 'light'}">
+            <p class="text-fcolor">Claro</p>
+            <div class="flex flex-row gap-2">
+                <span class="block bg-[#F8F8F8] w-[20px] h-[20px] rounded-full"></span>
+                <span class="block bg-[#21AFFF] w-[20px] h-[20px] rounded-full"></span>
+                <span class="block bg-[#1DB954] w-[20px] h-[20px] rounded-full"></span>
+            </div>
+        </li>
+        <li class="flex items-center justify-around w-[214px] text-[24px] px-4 py-3 hover:bg-customhover rounded-md cursor-pointer"
+            (click)="this.themeService.changeTheme('dark')"
+            [ngClass]="{'bg-customhover': themeService.getTheme() === 'dark'}">
+            <p class="text-fcolor">Oscuro</p>
+            <div class="flex flex-row gap-2">
+                <span class="block bg-[#1C1C1C] w-[20px] h-[20px] rounded-full"></span>
+                <span class="block bg-[#1DB954] w-[20px] h-[20px] rounded-full"></span>
+                <span class="block bg-[#21AFFF] w-[20px] h-[20px] rounded-full"></span>
+            </div>
+        </li>
+    </ul>
+</nav>
