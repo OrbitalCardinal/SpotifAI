@@ -24,6 +24,14 @@ module.exports = {
         "bmain": "#F8F8F8",
         "customshadow": "rgba(0, 0, 0, 0.30)",
         "customhover": "#E6E6E6"
+      },
+      hulk: {
+        "primary": "#B821FF",
+        "secondary": "#1DB96E",
+        "fcolor": "#EDEDED",
+        "bmain": "#090909",
+        "customshadow": "rgba(255, 255, 255, 0.20)",
+        "customhover": "#646464"
       }
     })
   ],
