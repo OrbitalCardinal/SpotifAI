@@ -18,9 +18,9 @@
             [ngClass]="{'bg-customhover': themeService.getTheme() === theme.class}">
             <p class="text-fcolor">{{theme.name}}</p>
             <div class="flex flex-row gap-2">
-                <span class="block w-[20px] h-[20px] rounded-full bg-[{{theme.bg}}]"></span>
-                <span class="block w-[20px] h-[20px] rounded-full bg-[{{theme.primary}}]"></span>
-                <span class="block w-[20px] h-[20px] rounded-full bg-[{{theme.secondary}}]"></span>
+                <span class="block w-[20px] h-[20px] rounded-full" [style]="'background-color: ' + theme.bg + ';'"></span>
+                <span class="block w-[20px] h-[20px] rounded-full" [style]="'background-color: ' + theme.primary + ';'"></span>
+                <span class="block w-[20px] h-[20px] rounded-full" [style]="'background-color: ' + theme.secondary + ';'"></span>
             </div>
         </li>
         }
