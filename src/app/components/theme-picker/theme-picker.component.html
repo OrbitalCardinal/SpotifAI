@@ -1,5 +1,6 @@
 <nav class="fixed flex flex-col items-center w-[300px] h-screen text-dark shadow-[0px_4px_80px_10px] shadow-customshadow bg-bmain transition-shadow ease-out"
     [ngClass]="{'shadow-none bg-transparent': !isOpen}">
+
     <div class="flex flex-row w-[214px] items-center justify-between mt-[40px] cursor-pointer"
         (click)="isOpen = !isOpen">
         <div class="flex flex-row items-center">
@@ -10,19 +11,12 @@
         <i class="text-secondary text-[20px] fa-solid fa-angle-down transition-transform"
             [ngClass]="{'rotate-180': isOpen}"></i>
     </div>
-    <ul class="w-full flex flex-col items-center transition-opacity ease-out mt-[30px]"
+
+    <ul class="w-full flex flex-col items-center transition-opacity ease-out my-[30px] overflow-y-auto"
         [ngClass]="{'invisible opacity-0': !isOpen}">
         @for(theme of themes; track theme.class) {
-        <li class="flex items-center justify-between w-[214px] text-[24px] px-4 py-3 hover:bg-customhover rounded-md my-[10px] cursor-pointer"
-            (click)="this.themeService.changeTheme(theme.class)"
-            [ngClass]="{'bg-customhover': themeService.getTheme() === theme.class}">
-            <p class="text-fcolor">{{theme.name}}</p>
-            <div class="flex flex-row gap-2">
-                <span class="block w-[20px] h-[20px] rounded-full" [style]="'background-color: ' + theme.bg + ';'"></span>
-                <span class="block w-[20px] h-[20px] rounded-full" [style]="'background-color: ' + theme.primary + ';'"></span>
-                <span class="block w-[20px] h-[20px] rounded-full" [style]="'background-color: ' + theme.secondary + ';'"></span>
-            </div>
-        </li>
+        <app-theme-item [theme]="theme"></app-theme-item>
         }
     </ul>
+
 </nav>

@@ -1,28 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { ThemeService } from '@services/theme.service';
-
-export interface IThemes {
-  name: string;
-  class: string;
-  bg: string;
-  primary: string;
-  secondary: string;
-}
+import { Component } from '@angular/core';
+import { ThemeItemComponent } from '@components/theme-item/theme-item.component';
+import { ITheme } from "@interfaces/models";
 
 @Component({
   selector: 'app-theme-picker',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ThemeItemComponent],
   templateUrl: './theme-picker.component.html',
-  styleUrl: './theme-picker.component.scss',
-  providers: [ThemeService]
+  styleUrl: './theme-picker.component.scss'
 })
 export class ThemePickerComponent {
 
-  public themeService = inject(ThemeService);
-
-  public themes: IThemes[] = [];
+  public themes: ITheme[] = [];
 
   constructor() {
     this.themes = [
