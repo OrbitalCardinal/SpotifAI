@@ -30,6 +30,7 @@
       "@pages/*": ["app/pages/*"],
       "@interfaces/*": ["app/interfaces/*"],
       "@services/*": ["app/services/*"],
+      "@environments/*": ["./environments/*"],
     }
   },
   "angularCompilerOptions": {

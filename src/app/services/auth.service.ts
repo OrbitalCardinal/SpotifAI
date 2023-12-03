@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from "@environments/environment";
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private router: Router) { }
 
   getCredentials() {
-    let redirect_uri = 'http://localhost:4200/auth-callback';
+    let redirect_uri = environment.redirect_uri;
     let client_id = 'd15d203c65804daa8ba59b87b34479b3';
     let client_secret ='54298d5da3384099ad1625e111b49c81';
 
