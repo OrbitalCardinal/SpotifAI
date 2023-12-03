@@ -1,0 +1,1 @@
+import{Aa as a,Fa as m,U as n,Ua as p,va as r,wa as i}from"./chunk-ONQ4HEUA.js";var l=(()=>{let e=class e{};e.\u0275fac=function(o){return new(o||e)},e.\u0275cmp=n({type:e,selectors:[["app-error"]],standalone:!0,features:[m],decls:2,vars:0,template:function(o,d){o&1&&(r(0,"p"),a(1,"error works!"),i())},dependencies:[p]});let t=e;return t})();export{l as ErrorComponent};

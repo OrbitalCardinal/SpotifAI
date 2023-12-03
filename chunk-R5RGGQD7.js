@@ -1,0 +1,1 @@
+import{M as s}from"./chunk-ONQ4HEUA.js";var n=(()=>{let t=class t{constructor(){this.requestsCount=0}addRequest(){this.requestsCount++}removeRequest(){this.requestsCount--}getRequests(){return this.requestsCount}};t.\u0275fac=function(r){return new(r||t)},t.\u0275prov=s({token:t,factory:t.\u0275fac,providedIn:"root"});let e=t;return e})();export{n as a};
