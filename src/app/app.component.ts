@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ThemePickerComponent } from '@components/theme-picker/theme-picker.component';
+import { ThemeService } from '@services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,16 @@ import { ThemePickerComponent } from '@components/theme-picker/theme-picker.comp
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  public themeService = inject(ThemeService);
+
+  ngOnInit(): void {
+    let theme = localStorage.getItem("theme");
+    if(theme) {
+      this.themeService.changeTheme(theme);
+    }
+  }
   title = 'SpotifAI';
+
 }

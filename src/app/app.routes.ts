@@ -9,5 +9,9 @@ export const routes: Routes = [
     {
         path: "auth",
         loadComponent: () => import("@pages/auth/auth.component").then(c => c.AuthComponent)
+    },
+    {
+        path: "auth-callback",
+        loadComponent: () => import("@pages/auth-callback/auth-callback.component").then(c => c.AuthCallbackComponent)
     }
 ];

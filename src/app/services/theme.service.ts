@@ -14,6 +14,7 @@ export class ThemeService {
     if (html) {
       html[0].classList.replace(this.themeAct, theme);
       this.themeAct = theme;
+      localStorage.setItem("theme", theme);
     }
   }
 

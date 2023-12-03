@@ -11,6 +11,8 @@ module.exports = {
     createThemes({
       dark: {
         "primary": "#1DB954",
+        "primaryhover": "#199e48",
+        "primaryactive": "#16873e",
         "secondary": "#21AFFF",
         "fcolor": "#FFFFFF",
         "bmain": "#1C1C1C",
@@ -19,6 +21,8 @@ module.exports = {
       },
       light: {
         "primary": "#21AFFF",
+        "primaryhover": "#1c93d6",
+        "primaryactive": "#187cb5",
         "secondary": "#1DB954",
         "fcolor": "#676767",
         "bmain": "#F8F8F8",
@@ -27,6 +31,8 @@ module.exports = {
       },
       hulk: {
         "primary": "#B821FF",
+        "primaryhover": "#8c1bc2",
+        "primaryactive": "#681391",
         "secondary": "#1DB96E",
         "fcolor": "#EDEDED",
         "bmain": "#090909",

@@ -1,0 +1,21 @@
+name: Build and Deploy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 18.16.0
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.16.0
+      - name: Build and Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v2
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BASE_BRANCH: main
+          BRANCH: main
+          FOLDER: dist/spotif-ai
+          BUILD_SCRIPT: npm install && npm run build -- --prod
