@@ -36,6 +36,13 @@ export class ThemePickerComponent {
         bg: "#1C1C1C",
         primary: "#B821FF",
         secondary: "#1DB96E"
+      },
+      {
+        name: "Test",
+        class: "hulk",
+        bg: "#1C1C1C",
+        primary: "#B821FF",
+        secondary: "#1DB96E"
       }
     ];
   }
