@@ -20,7 +20,7 @@ export class AuthService {
     data.append('client_id', client_id);
     data.append(
       'scope',
-      `playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public`
+      `playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public user-read-playback-state user-modify-playback-state user-read-currently-playing`
       );
       data.append('redirect_uri', redirect_uri);
       window.location.href = 'https://accounts.spotify.com/authorize?' + data.toString();
