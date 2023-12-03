@@ -23,6 +23,6 @@ export class AuthService {
       `playlist-read-private playlist-read-collaborative playlist-modify-private playlist-modify-public`
       );
       data.append('redirect_uri', redirect_uri);
-      window.open('https://accounts.spotify.com/authorize?' + data.toString())
+      window.location.href = 'https://accounts.spotify.com/authorize?' + data.toString();
   }
 }
