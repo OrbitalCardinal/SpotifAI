@@ -1,0 +1,8 @@
+@for (playlist of playlists; track $index) {
+    <div class="flex flex-row items-center gap-4 mb-[20px]">
+        @defer {
+            <img [src]="playlist['images'][0]['url']" class="w-[100px] h-[100px]">
+            <p>{{playlist['name']}}</p>
+        }    
+    </div>
+}

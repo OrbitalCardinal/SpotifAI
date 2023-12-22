@@ -1,0 +1,1 @@
+openapi-generator-cli generate -i api-definition.json -g typescript-angular -o spotifai-api
