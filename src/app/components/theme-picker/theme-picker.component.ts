@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, inject } from '@angular/core';
 import { ThemeItemComponent } from '@components/theme-item/theme-item.component';
 import { ITheme } from "@interfaces/models";
+import { ThemeService } from '@services/theme.service';
 
 @Component({
   selector: 'app-theme-picker',
@@ -13,6 +14,17 @@ import { ITheme } from "@interfaces/models";
 export class ThemePickerComponent {
 
   public themes: ITheme[] = [];
+
+  public themeService = inject(ThemeService);
+  public isOpen: boolean = false;
+  private elementRef = inject(ElementRef);
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    if (!this.elementRef.nativeElement.contains(event.target) && this.isOpen) {
+      this.isOpen = !this.isOpen;
+    }
+  }
 
   constructor() {
     this.themes = [
@@ -39,6 +51,4 @@ export class ThemePickerComponent {
       }
     ];
   }
-
-  public isOpen: boolean = false;
 }
